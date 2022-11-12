@@ -8,6 +8,15 @@ from flaskr.db import get_db
 
 bp = Blueprint('blog', __name__)
 
+def getcountryname(countrycode):
+    countryname = get_db().execute(
+        'SELECT c.name, c.code'
+        ' FROM countries c'
+        ' WHERE code = ?',
+        (countrycode,)
+    ).fetchone()
+    return countryname
+
 @bp.route('/')
 def index():
     db = get_db()
@@ -16,7 +25,20 @@ def index():
         ' FROM post p JOIN user u ON p.author_id = u.id'
         ' ORDER BY created DESC'
     ).fetchall()
+
     return render_template('blog/index.html', posts=posts)
+
+
+@bp.route('/viewcountry/<string:country>', methods=('GET', 'POST'))
+def viewcountry(country):
+    db = get_db()
+    songs = db.execute(
+        'SELECT p.id, title, body, created, author_id, username'
+        ' FROM post p JOIN user u ON p.author_id = u.id'
+        ' ORDER BY created DESC'
+    ).fetchall()
+    name = getcountryname(country)
+    return render_template('blog/viewcountry.html', posts=songs, countryname=name["name"])
 
 @bp.route('/create', methods=('GET', 'POST'))
 @login_required
