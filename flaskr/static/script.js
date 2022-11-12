@@ -27,6 +27,11 @@ document.addEventListener('DOMContentLoaded', function() {
           DK: {listeners: 18, stations: 6, link: '/viewcountry/DK'},
           GB: {listeners: 22, stations: 15, link: '/viewcountry/GB'},
           US: {listeners: 12, stations: 18, link: '/viewcountry/US'},
+          BR: {listeners: 11, stations: 18, link: '/viewcountry/BR'},
+
+          DE: {listeners: 6, stations: 6, link: '/viewcountry/DE'},
+          ID: {listeners: 9, stations: 3, link: '/viewcountry/ID'},
+          RS: {listeners: 4, stations: 7, link: '/viewcountry/RS'},
         }
     }
 

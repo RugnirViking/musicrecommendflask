@@ -5,23 +5,25 @@
 {% endblock %}
 
 {% block content %}
-  <span>{{ countryname }}</span>
-
-  {% for post in posts %}
-    <article class="post">
-      <header>
-        <div>
-          <h1>{{ post['title'] }}</h1>
-          <div class="about">by {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
+  <div class="topbar"><a class="backbtn" href="javascript:window.history.back();" aria-hidden="true"><i class="fa fa-arrow-left" aria-hidden="true"></i></a><span class="countryname">{{ countryname }}</span></div>
+  <div class="row">
+    {% for genre in genres %}
+      <div class="col-lg-4">
+        <div class="card genre" style="background-image:url('{{genre.imglink}}')">
+          <div class="genrewrapper">
+            <a class="card-body" href="/genre/{{genre.name}}">
+              <h5 class="card-title genretitle">{{ genre.name }}</h5>
+              <p class="card-text genredesc">{{ genre.description }}</p>
+            </a>
+          </div>
         </div>
-        {% if g.user['id'] == post['author_id'] %}
-          <a class="action" href="{{ url_for('blog.update', id=post['id']) }}">Edit</a>
-        {% endif %}
-      </header>
-      <p class="body">{{ post['body'] }}</p>
-    </article>
-    {% if not loop.last %}
-      <hr>
-    {% endif %}
-  {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+
+      <br/>
+    {% for country in countries %}
+      {{country.id}} {{country.name}}
+      <br/>
+    {% endfor %}
 {% endblock %}

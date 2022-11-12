@@ -10,7 +10,7 @@ def scrape():
     links = []
 
     # open the webpage
-    url = 'https://everynoise.com/engenremap-afghanpop.html'
+    url = 'https://everynoise.com/engenremap-indonesianrb.html'
     page = requests.get(url)
     soup = BeautifulSoup(page.content, 'html.parser')
 
@@ -25,8 +25,8 @@ def scrape():
 
     print(artists)
     print(links)
-    for artist in artists:
-        print(artist)
+    for n, artist in enumerate(artists):
+        print("INSERT INTO songs (name, artist, genre, spotify_id) VALUES (\"\",\""+str(artist)+"\",25,\""+str(links[n].replace("spotify:artist:",""))+"\");")
 
 
 if __name__ == '__main__':

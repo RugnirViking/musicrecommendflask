@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}{{name}}{% endblock %}</h1>
+
+{% endblock %}
+
+{% block content %}
+<h5>{{description.description}}</h5>
+  <span>{{ countryname }}</span>
+  <div class="row">
+
+    {% for song in songs %}
+      <div class="col-xl-3 col-md-6 col-sm-12">
+        <div class="card song">
+          <h5 class="card-title artisttitle">{{ song.artist }}</h5>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/{{song.spotify_id}}?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          <div style="display:inline;margin:8px;">
+            <a href="#" class="btn azm-social azm-size-64 azm-circle azm-long-shadow azm-spotify"><i class="fa-brands fa-spotify"></i></a>
+            <a href="#" class="btn azm-social azm-size-64 azm-circle azm-long-shadow azm-soundcloud"><i class="fa-brands fa-soundcloud"></i></a>
+            <a href="#" class="btn azm-social azm-size-64 azm-circle azm-long-shadow azm-youtube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="btn azm-social azm-size-64 azm-circle azm-long-shadow azm-bandcamp"><i class="fa-brands fa-bandcamp"></i></a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}

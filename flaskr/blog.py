@@ -32,13 +32,59 @@ def index():
 @bp.route('/viewcountry/<string:country>', methods=('GET', 'POST'))
 def viewcountry(country):
     db = get_db()
-    songs = db.execute(
-        'SELECT p.id, title, body, created, author_id, username'
-        ' FROM post p JOIN user u ON p.author_id = u.id'
-        ' ORDER BY created DESC'
+
+    genres = db.execute(
+        'SELECT g.id, g.name, c.code, g.imglink'
+        ' FROM genres g JOIN countries c ON g.country = c.id'
+        ' WHERE c.code = ?'
+        ' ORDER BY g.name ASC',
+        (country,)
     ).fetchall()
+
+    countries  = db.execute(
+        'SELECT c.id, c.name, c.code'
+        ' FROM countries c'
+        ' ORDER BY c.name ASC'
+    ).fetchall()
+
+
     name = getcountryname(country)
-    return render_template('blog/viewcountry.html', posts=songs, countryname=name["name"])
+
+    return render_template('blog/viewcountry.html',countries=countries, genres=genres, countryname=name["name"])
+
+@bp.route('/genre/<string:genre>', methods=('GET', 'POST'))
+def viewgenre(genre):
+    db = get_db()
+
+    # turn url into genre name
+    genre = genre.replace("%20", " ").strip()
+
+    songs = db.execute(
+        'SELECT s.id, s.name, s.artist, s.genre, s.spotify_id'
+        ' FROM songs s JOIN genres g ON s.genre = g.id'
+        ' WHERE g.name = ?'
+        ' ORDER BY s.name ASC',
+        (genre,)
+    ).fetchmany(12)
+
+
+    genres = db.execute(
+        'SELECT g.id, g.name'
+        ' FROM genres g'
+        ' ORDER BY g.name ASC'
+    ).fetchall()
+
+    description = db.execute(
+        'SELECT g.description'
+        ' FROM genres g'
+        ' WHERE g.name = ?',
+        (genre,)
+    ).fetchone()
+
+    return render_template('blog/viewgenre.html', genres=genres, songs=songs, name=genre, description=description)
+
+
+
 
 @bp.route('/create', methods=('GET', 'POST'))
 @login_required

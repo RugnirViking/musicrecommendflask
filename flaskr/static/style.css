@@ -3,6 +3,7 @@
     flex-direction: column;
     min-height: 100vh;
     min-width: 100vw;
+    overflow-x: hidden;
 }
 .about-section {
     padding: 50px;
@@ -10,4 +11,107 @@
     background-color: #474e5d;
     color: white;
     flex-grow: 1;
+}
+
+.genre {
+    background-color: #000;
+    min-height: 400px;
+    min-width: 400px;
+    margin: 10px;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+
+   transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+.genre:hover {
+  transform: scale(1.0);
+   background-size:130%/* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.genrewrapper{
+    display:flex;
+    width:100%;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('landingpagepic.jpg');
+    background-position:center top;
+    height:400px;
+}
+
+.genretitle{
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+}
+.genredesc{
+    font-size: 32px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+.song {
+    background-color: #333;
+    min-height: 200px;
+    min-width: 400px;
+    margin: 10px;
+    padding: 10px;
+}
+.azm-bandcamp{
+    background: #202092;
+}
+
+.inline-icon{
+    display: inline-block;
+    width: 3em;
+    height: 3em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-right: 3em;
+}
+.logo{
+    display: block;
+    width: 12em;
+    height: 12em;
+    vertical-align: middle;
+    horizontal-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+}
+.countryname{
+    font-size: 64px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Smooch Sans', sans-serif;
+    display:flex;
+  align-items: center;
+  justify-content: center;
+      flex: 1;
+}
+
+.backbtn{
+    font-size: 32px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Smooch Sans', sans-serif;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    vertical-align: middle;
+    padding-left: 1em;
+}
+.topbar{
+    display:flex;
+    flex-direction: row;
 }
