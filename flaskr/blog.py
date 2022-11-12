@@ -65,7 +65,7 @@ def viewgenre(genre):
         ' WHERE g.name = ?'
         ' ORDER BY s.name ASC',
         (genre,)
-    ).fetchmany(12)
+    ).fetchmany(16)
 
 
     genres = db.execute(
