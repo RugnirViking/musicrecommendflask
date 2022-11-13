@@ -25,5 +25,9 @@
       </div>
     {% endfor %}
   </div>
-
+<br/>
+    {% for country in genres %}
+      {{country.id}} {{country.name}}
+      <br/>
+    {% endfor %}
 {% endblock %}
