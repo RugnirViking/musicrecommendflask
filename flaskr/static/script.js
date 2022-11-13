@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
           RS: {listeners: 4, stations: 7, link: '/viewcountry/RS'},
           CN: {listeners: 44, stations: 36, link: '/viewcountry/CN'},
           IN: {listeners: 32, stations: 37, link: '/viewcountry/IN'},
+          RO: {listeners: 1, stations: 1, link: '/viewcountry/RO'},
         }
     }
 

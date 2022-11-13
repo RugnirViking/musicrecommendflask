@@ -203,5 +203,7 @@ def create_app(app,test_config=None):
     return app
 
 app = Flask(__name__, instance_relative_config=True)
+app = create_app(app)
+
 if __name__ == '__main__':
-    app = create_app(app).run(debug=False, port=80)
+    app.run(debug=False, port=80)

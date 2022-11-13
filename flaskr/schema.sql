@@ -48,6 +48,7 @@ INSERT INTO countries (name, code, listeners, radio_stations) VALUES ('Serbia', 
 INSERT INTO countries (name, code, listeners, radio_stations) VALUES ('Albania', 'AL', 4, 4);
 INSERT INTO countries (name, code, listeners, radio_stations) VALUES ('China', 'CN', 44, 36);
 INSERT INTO countries (name, code, listeners, radio_stations) VALUES ('India', 'IN', 44, 36);
+INSERT INTO countries (name, code, listeners, radio_stations) VALUES ('Romania', 'RO', 44, 36);
 
 CREATE TABLE genres (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -108,6 +109,7 @@ INSERT INTO genres (name, country, description,imglink) VALUES ("Indian-Ambient"
 INSERT INTO genres (name, country, description,imglink) VALUES ("Enka",15,"","https://cdn.discordapp.com/attachments/1008571034733129864/1041297959393968128/danskernejazz_japanese_enka_cover_86e28eb8-53e5-429c-a4a0-7aac2f1fd3c6.png");
 INSERT INTO genres (name, country, description,imglink) VALUES ("Modern Enka",15,"","https://cdn.discordapp.com/attachments/990816772108202044/1041300163047723049/enka-ankh_japanese_modern_enka_urban_cover_14f734b1-90d1-4fe8-827d-6d049d6f2edd.png");
 INSERT INTO genres (name, country, description,imglink) VALUES ("Japanese-Girl-Punk",15,"","https://cdn.discordapp.com/attachments/990816772108202044/1041303772397326336/enka-ankh_japanese_girl_punk_cover_038a75d1-6bb4-4d22-bbc6-7a57e142f8e4.png");
+INSERT INTO genres (name, country, description,imglink) VALUES ("Romanian-Black-Metal",22,"","https://cdn.discordapp.com/attachments/990816772108202044/1041374609334866052/enka-ankh_romanian_black_metal_cover_13cce8e8-679d-4321-bcb6-78609526565f.png");
 
 CREATE TABLE songs (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -4202,3 +4204,49 @@ INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","THE PORTUGAL JAP
 INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","HoLDERLINS",43,"73pjZFaD3OxZQB9lkrz3Wt");
 INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Skirt No Naka",43,"7miwa9BpXP3QNb7NGKfotA");
 INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Extra Virgin Soo",43,"3phYOMuzEAXl7zEGE2ezsO");
+
+-- ROMANIA
+
+-- Romanian Black Metal
+
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Tenebres",44,"1oKRasiEkbgaVjZ7ScuuWy");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Apa Sîmbetii",44,"19fbIQ65zlGJIiK3i8TYOS");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Tableau Mort",44,"2ggrc1ffeQC5hQ4u4Pcnhv");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Sorgnatt",44,"34YG0eEWBwTa9hVZiXEhI3");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Creperum",44,"6luksD7gnX31S3bXyArtoD");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Grohot",44,"3yjRKocwitYaMTunaBpvTt");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Domnitor",44,"118ZmB3qjKzotEcWkQckDD");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Hëllstrike",44,"1zvTrSTzN2tQil12rPxG7U");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","autumn, leaves, scars",44,"2BBICExunBsDe99fE7x2oW");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Naamah",44,"2trv6pEHIxmrISQy7EMDNw");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Akral Necrosis",44,"4v5TcufOaBhnOXN00PZSnk");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Vokodlok",44,"2MzXvkxQfDTVZ7pCsfei5R");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Beheom",44,"6g4wMbRD5ALNisK6PkTlZA");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Syn Ze Sase Tri",44,"7IXw1trkemaKyPTVoL97MG");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Negură Bunget",44,"6wLgoPmccgFkKpjPYvJqtM");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Prohod",44,"72X2bwKVrTzF3HiqcLvKAN");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Bucovina",44,"2Z912EMB8D91VQT4rFUEX1");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Clouds",44,"5b4d1sad2FNXIOYef3vTDg");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Váthos",44,"0UY4TPdLlMiiokp5pA7FrC");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Martolea",44,"1Vzz2uyBtws42M4p4Sl4Db");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","NocturN",44,"6GNRbO4qXWcRLdI8qtwNGF");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Ashaena",44,"5VY5SLLo3bpyPBNniAfM4E");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Bloodway",44,"2je0dOHTeVQajNS1ABJQ9N");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Dordeduh",44,"052X0cOZM6KscHPcJwsPh0");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Gerrar",44,"0To3Yhm4hqn6PHGNeVEEl0");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Darken My Grief",44,"1oM6uNPby944sjH5UqOquT");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Kultika",44,"56yPiDkDTiLZJFudYB5G6m");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Agathodaimon",44,"4wGWp9UJ9wHLNYddWbB0sF");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Colosus",44,"2AsQxY6HlKrbAeLsDkPnF0");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Mercy's Dirge",44,"6nE3rVxqGskPXMyICgI0X0");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Wolfsgrey",44,"16UnjPcbF1ZVdaoDWZsta2");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Watashi Dake",44,"0AVqGZAfevg91plAeNp89o");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Marax",44,"0U4LnrutIQ8akfSNj71cEv");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Calugarul",44,"6SVZkwxhvTVze29t7DHHal");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Persekutor",44,"13qYgj860ADl0bM4qTfhlY");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Fogland",44,"4e3P9i51NEaXuK13p7Hlxe");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Lochrian Poem",44,"7MmtNR8Be6IGRK0SYhV4bC");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Kistvaen",44,"1akBOAtfwaL5LNnVJrIrN0");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","False Reality",44,"0ElmgceJcgTL3lm7jV3OTd");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Sur Austru",44,"029YQisxpHZN8R3CxONBZ7");
+INSERT INTO songs (name, artist, genre, spotify_id) VALUES ("","Krepuskul",44,"4YJyjLT8gyoYyDyGmmHnao");
