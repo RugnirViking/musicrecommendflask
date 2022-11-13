@@ -1,10 +1,10 @@
 from flask import (
-    Blueprint, flash, g, redirect, render_template, request, url_for
+    Blueprint, flash, g, redirect, render_template, request, url_for, Flask
 )
 from werkzeug.exceptions import abort
-
-from flaskr.auth import login_required
-from flaskr.db import get_db
+import os
+from auth import login_required
+from db import get_db
 
 bp = Blueprint('blog', __name__)
 
@@ -162,3 +162,46 @@ def delete(id):
     db.execute('DELETE FROM post WHERE id = ?', (id,))
     db.commit()
     return redirect(url_for('blog.index'))
+
+
+
+def create_app(app,test_config=None):
+    # create and configure the app
+    app.config.from_mapping(
+        SECRET_KEY='dev',
+        DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
+    )
+
+    if test_config is None:
+        # load the instance config, if it exists, when not testing
+        app.config.from_pyfile('config.py', silent=True)
+    else:
+        # load the test config if passed in
+        app.config.from_mapping(test_config)
+
+    # ensure the instance folder exists
+    try:
+        os.makedirs(app.instance_path)
+    except OSError:
+        pass
+
+    # a simple page that says hello
+    @app.route('/hello')
+    def hello():
+        return 'Hello, World!'
+
+    import db
+    db.init_app(app)
+
+    import auth
+    app.register_blueprint(auth.bp)
+
+    import main
+    app.register_blueprint(main.bp)
+    app.add_url_rule('/', endpoint='index')
+
+    return app
+
+app = Flask(__name__, instance_relative_config=True)
+if __name__ == '__main__':
+    app = create_app(app).run(debug=False, port=80)

@@ -5,6 +5,25 @@
     min-width: 100vw;
     overflow-x: hidden;
 }
+#page-top::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(180deg, #50b5a0 0%, #db7341 99%);
+  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+  border-radius: 100px;
+}
+::-webkit-scrollbar {
+  width: 12px;
+  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+  border-radius: 100px;
+  background-image: linear-gradient(180deg, #000 0%, #222 99%);
+}
+::-webkit-scrollbar-corner {
+    background: transparent;
+    width: 0;
+    height: 0;
+    border-left: 16px solid #8B7E79;
+    border-top: 16px solid #8B7E79;
+    border-bottom: 16px solid transparent;
+    border-right: 16px solid transparent; }
 .about-section {
     padding: 50px;
     text-align: center;
@@ -36,7 +55,7 @@
 .genrewrapper{
     display:flex;
     width:100%;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('landingpagepic.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('landingpagepic.jpg');
     background-position:center top;
     height:400px;
 }
@@ -67,7 +86,13 @@ a {
 .azm-bandcamp{
     background: #202092;
 }
-
+.azm-deezer{
+    background: #702072;
+}
+.azm-radio{
+    background: #202022;
+    font-size: 20px;
+}
 .inline-icon{
     display: inline-block;
     width: 3em;
@@ -97,6 +122,11 @@ a {
   align-items: center;
   justify-content: center;
       flex: 1;
+}
+
+.titlevibes{
+    font-family: "Helvetica", sans-serif !important;
+    font-weight:600 !important;
 }
 
 .backbtn{
