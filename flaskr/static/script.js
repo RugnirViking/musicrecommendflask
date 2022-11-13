@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
           DE: {listeners: 6, stations: 6, link: '/viewcountry/DE'},
           ID: {listeners: 9, stations: 3, link: '/viewcountry/ID'},
           RS: {listeners: 4, stations: 7, link: '/viewcountry/RS'},
+          CN: {listeners: 44, stations: 36, link: '/viewcountry/CN'},
+          IN: {listeners: 32, stations: 37, link: '/viewcountry/IN'},
         }
     }
 
